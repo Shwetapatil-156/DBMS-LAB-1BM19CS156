@@ -1,0 +1,119 @@
+-- create a table
+CREATE TABLE PERSON (
+  driverid  PRIMARY KEY,
+  name varchar(13),
+  adress varchar(20)
+);
+-- insert  values
+INSERT INTO PERSON VALUES ('dgdhdy', 'Ryan', 'banglore');
+INSERT INTO PERSON VALUES ('jjiij', 'Joanna', 'bidar');
+INSERT INTO PERSON VALUES ('sjjsih', 'Ryan', 'bulltemple');
+INSERT INTO PERSON VALUES ('hiuhjm', 'Joanna', 'jayanagar');
+INSERT INTO PERSON VALUES ('jsjisn', 'Ryan', 'mysore');
+
+
+SELECT *from PERSON;
+
+-- fetch some values
+SELECT * FROM PERSON WHERE name = 'Ryan';
+
+
+-- create a table
+CREATE TABLE CAR (
+  regno varchar(10) PRIMARY KEY,
+  model varchar(13),
+  year int
+);
+-- insert some values
+INSERT INTO CAR VALUES ('dgdhdy', 'MARUTI', '2015');
+INSERT INTO CAR VALUES ('jjiij', 'SSV', '2016');
+INSERT INTO CAR VALUES ('sjjsih', 'BENZ', '2017');
+INSERT INTO CAR VALUES ('hiuhjm', 'CRETA', '2018');
+INSERT INTO CAR VALUES ('jsjisn', 'INDICA', '2010');
+
+
+SELECT *from CAR;
+
+-- fetch some values
+SELECT * FROM CAR WHERE MODEL = 'INDICA';
+select count(*) FROM CAR where model='indica';
+
+
+
+-- create a table
+  CREATE TABLE ACCIDENT (
+  report_num int  PRIMARY KEY,
+  date int,
+  location varchar(13),
+);  
+
+-- insert  values
+INSERT INTO ACCIDENT VALUES ('34',  '19',  'banglore');
+INSERT INTO ACCIDENT VALUES ('45',  '28',  'bidar');
+INSERT INTO ACCIDENT VALUES ('23',  '25',  'bulltemple');
+INSERT INTO ACCIDENT VALUES ('68',  '12',  'jayanagar');
+INSERT INTO ACCIDENT VALUES ('67',  '23',  'mysore');
+
+    -- adding  new database into ACCIDENT
+ INSERT INTO  ACCIDENT VALUES ('29', '26', 'chamrajnagar');
+ 
+
+SELECT *from ACCIDENT;
+
+-- fetch some values
+SELECT * FROM ACCIDENT WHERE date = '19';
+
+
+
+
+
+
+-- create a table
+CREATE TABLE OWNS (
+  driverid int PRIMARY KEY,
+  regno varchar(13)
+ 
+);
+-- insert some values
+INSERT INTO OWNS VALUES (38, 'dgdhdy');
+INSERT INTO OWNS VALUES (35,' jjiij');
+INSERT INTO OWNS VALUES (34, 'sjjsih');
+INSERT INTO OWNS VALUES (12, 'hiuhjm');
+INSERT INTO OWNS VALUES (23, 'jsjisn');
+
+SELECT *FROM OWNS;
+
+
+-- fetch some values
+SELECT * FROM OWNS WHERE regno = 'dgdhdy';
+
+
+
+
+-- create a table
+CREATE TABLE PARTICIPATED (
+  driverid int PRIMARY KEY,
+  regno varchar(13),
+  reportno int,
+  damage_amount int
+ 
+);
+-- insert some values
+INSERT INTO PARTICIPATED VALUES (38, 'dgdhdy',78, 6890);
+INSERT INTO PARTICIPATED VALUES (35,' jjiij', 89, 8976);
+INSERT INTO PARTICIPATED VALUES (34, 'sjjsih', 87,8765);
+INSERT INTO PARTICIPATED VALUES (12, 'hiuhjm', 45, 9765);
+INSERT INTO PARTICIPATED VALUES (23, 'jsjisn', 43, 7654);
+
+SELECT *FROM PARTICIPATED;
+
+update PARTICIPATED set damage_amount=25000 where reportno=12;
+
+
+-- fetch some values
+SELECT * FROM PARTICIPATED WHERE regno = 'dgdhdy';
+
+
+
+
+

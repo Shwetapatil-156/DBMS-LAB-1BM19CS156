@@ -1,0 +1,76 @@
+create table branch(branchname varchar(10),
+                    city varchar(10),
+                    assests REAL);
+--inserting tuples
+insert into branch('barodabank', 'baroda', 200);
+insert into branch('bidarabank', 'bidar', 250);
+insert into branch('alhabadbank', 'alhabad', 300);
+insert into branch('delhibank', 'delhi', 350);
+
+--VIEW OF TABLE 
+select *from branch;
+create table accounts(accno int primary key,
+                      branchname varchar(10),
+                      balance REAL,
+                      FOREIGN key (branchname) REFERENCES branch (branchname)
+                      );
+inserting tuples---  
+insert into accounts values (734, 'ibranch', 976)
+insert into accounts values (534, 'tranch', 476)
+insert into accounts values (734, 'ibranch', 976)
+insert into accounts values (534, 'tranch', 476)
+
+
+--VIEW OF TABLE
+select *from accounts
+
+
+
+
+create table depositor(customername varchar(10) primary KEY,
+                      customeestreet varchar(10),
+                      customercity varchar(10)
+                       );
+--inserting values 
+INSERT INTO depositor('shweta', 'lrroad', 'mumbai');
+INSERT INTO depositor('rohit', 'krroad', 'delhi');
+INSERT INTO depositor('harshita', 'mrroad', 'manglore');
+INSERT INTO depositor('abhi', 'nrroad', 'bidar');
+INSERT INTO depositor('rahul', 'prroad', 'belgam');
+                      
+--table view
+select *from depositor;
+
+
+create table laon(loannumber int  primary KEY,
+                  branchname varchar(10),
+                  amount real
+                  ); 
+--inserting values
+insert into loan  VALUES(23, 'barodabranch', 569);
+ INSERT INTO loan VALUES (34, 'bidarbranch', 768);
+INSERT INTO loan VALUES(34, 'alhabadbranch', 768); 
+INSERT into loan VALUES (87, 'delhibank', 876);
+INSERT INTO loan VALUES(45, 'banglorebank', 654);
+
+--view
+select *from loan;
+
+create table borrower( customername varchar(10),
+                      loannumber int PRIMARY key 
+    
+--insering values                  );
+INSERT INTO borrower VALUES('preeti', 465);
+INSERT INTO borrower VALUES('hema', 764);
+INSERT INTO borrower VALUES('sunita', 123);
+INSERT INTO borrower VALUES('pachhu', 098);
+INSERT INTO borrower VALUES('sahana', 876);
+
+--view table
+select *from borrower;                      
+
+
+
+
+--viewing no. of people who belongs to main branch                     
+   select count(customername) from depositor WHERE customercity='bidar'                               
